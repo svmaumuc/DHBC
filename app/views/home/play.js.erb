@@ -1,0 +1,9 @@
+$(".imgTitle").hide("scale",700);
+$(".imgPlay" ).delay(700).hide("clip",500);
+setTimeout(function(){
+    $(".content").append('<%= j render 'play' %>');
+    $(".content").append('<%= j render 'viewstatic' %>');
+    $(".content").load_event();
+    $(".content").load_effect();
+    $(".content").load_hover();
+}, 1250);

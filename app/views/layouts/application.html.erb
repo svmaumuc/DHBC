@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>V5</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>DHBC</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'index' %>
+  <%= stylesheet_link_tag 'play' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'play_event' %>
+  <%= javascript_include_tag "/assets/jquery-ui.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-abc
-awfawf
-<%= yield %>
-
+<div class="content">
+  <%= yield %>
+</div>
 </body>
 </html>
+
+<%= javascript_include_tag 'play' %>
+

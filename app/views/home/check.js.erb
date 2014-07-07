@@ -1,0 +1,10 @@
+<% if params['answer'] == "BIENBAO" %>
+    $(".boximg").remove();
+    $(".listword").remove();
+    $("form").remove();
+    $(".content").append('<%= j render 'play' %>');
+    $(".content").load_event();
+    $(".content").load_effect();
+<% else %>
+    alert("Sai rồi !!!")
+<% end %>

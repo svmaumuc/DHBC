@@ -1,0 +1,132 @@
+
+div.content {
+  margin: auto;
+  width: 1353px;
+  position: relative;
+}
+
+div.boximg {
+  position: absolute;
+  left: 283px;
+  top: 35px;
+}
+
+div.boximg img {
+  width: 544px;
+  max-height: 330px;
+  display: none;
+}
+
+div.option {
+  right: 100px;
+  width: 5%;
+  position: absolute;
+  top: 35px;
+    display: none;
+}
+
+div.option img#sound, img#help {
+  width: 100%;
+}
+
+div.option img:hover {
+  cursor: pointer;
+}
+
+div.listword {
+  margin-left: 86px;
+  position: absolute;
+  width: 150px;
+  top: 20px;
+}
+
+div.word img {
+  float: left;
+  z-index: 0;
+  width: 73px;
+}
+
+div.word img:hover, p:hover {
+  cursor:pointer;
+}
+
+div.word p {
+  float: left;
+  margin-top: 17px;
+  margin-left: -44px;
+  z-index: 1;
+  font-size: 25px;
+}
+
+div.listBoxtext {
+  text-align: center;
+  width: 510px;
+  margin-left: 298px;
+  position: absolute;
+    top: 430px;
+
+}
+
+div.boxtext {
+  float: left;
+  display: none;
+}
+
+div.boxtext img:hover,div.word img:hover{
+    cursor:pointer;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+}
+
+div.listBoxtext .boxtext p {
+  margin-top: -56px;
+  font-size: 31px;
+}
+
+div.score {
+  position: absolute;
+  right: 198px;
+  top: 35px;
+  text-align: center;
+}
+
+.score p {
+  margin-top: -81px;
+  font-size: 20pt;
+  color: brown;
+  font-weight: bold;
+}
+
+
+div.topScore
+{
+  position: absolute;
+  top : 50px;
+  left: 400px;
+}
+
+div.topScore img
+{
+  z-index: 1;
+  display: none;
+  position: absolute;
+}
+
+div#TextTop {
+  position: absolute;
+  z-index: 2;
+  left: 100px;
+  top: 100px;
+  display: none;
+}
+
+div#TextTop p {
+  font-size: 16pt;
+  color: brown;
+}

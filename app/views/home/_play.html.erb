@@ -1,0 +1,24 @@
+<div class="boximg">
+  <img id="hinh" src="<%= @urlimg %>">
+</div>
+
+<div class="listword">
+  <% @listext.each do |char| %>
+      <div class="word" id="<%= char %>">
+        <img src="/assets/word.png"/>
+        <p><%= char %></p>
+      </div>
+  <% end %>
+</div>
+
+<%= form_tag "/home/check", method:"get",remote:true do %>
+    <%= hidden_field_tag(:answer, "") %>
+    <div class="listBoxtext">
+    <% @result.length.times do %>
+        <div class="boxtext">
+          <img src="/assets/ochu.png"/>
+        </div>
+    <% end %>
+
+    </div>
+<% end %>

@@ -1,0 +1,33 @@
+
+div.imgTitle {
+    position: absolute;
+    left: 17%;
+    display: none;
+    top: 50px;
+}
+
+div.imgTitle img {
+  width: 80%;
+}
+
+div.imgPlay {
+    position: absolute;
+    left: 42%;
+    top: 280px;
+    width: 50%;
+    display: none;
+}
+
+div.imgPlay img{
+  width: 25%;
+}
+
+div.imgPlay img{
+  width: 25%;
+}
+
+div.imgPlay img:hover{
+  cursor: pointer;
+}
+
+
