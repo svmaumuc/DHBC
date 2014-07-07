@@ -1,7 +1,9 @@
 /**
  * Created by Demon on 7/5/14.
  */
-function checkSubmit()
+
+//hàm kiem tra , gắn kết quả vào thẻ input #answer khi chọn hết ô chữ và submit
+function checkSubmit(numBox)
 {
     answer = "";
     $(".listBoxtext").children(".boxtext").each(function(){
@@ -18,7 +20,10 @@ function checkSubmit()
     });
 }
 
+// hàm sử lý sự kiện chọn và bỏ chọn chữ
 jQuery.fn.load_event = function(){
+
+    // sự kiện click chọn từng chữ
     $(".word").click(
         function()
         {
@@ -35,26 +40,27 @@ jQuery.fn.load_event = function(){
                         $(this).append("<p>"+text+"</p>");
                         $(this).attr('id',text);
                         word.remove();
-                        checkSubmit();
+                        checkSubmit(numBox);
                         return false;
                     }
                 });
             }
         });
 
+    // sự kiện click bỏ chọn chữ
     $(".boxtext").click(
         function()
         {
-            ide =  $(this).attr("id");
+            ide =  $(this).attr("id");  //lấy id của ô kết quả khi click
             boxtex = $(this);
-            if (typeof ide !== "undefined")
+            if (typeof ide !== "undefined")                         // kiểm tra id có tồn tại ko, nếu tộn tại thì tiếp
             {
-                $(".listword").children("#"+ide).each(function(){
-                    if($(this).find("p").size() == 0)
+                $(".listword").children("#"+ide).each(function(){   // duyệt tất cả ô trong dsach từ chọn có id giống Id của ô kết quả
+                    if($(this).find("p").size() == 0)               // kiem tra ô đó có chữ ko
                     {
-                        $(this).append("<p>"+ide+"</p>");
-                        boxtex.attr("id",null);
-                        boxtex.children("p").remove();
+                        $(this).append("<p>"+ide+"</p>");           // thêm chữ vào ô đó
+                        boxtex.attr("id",null);                     // gắn ID null cho ô kết quả
+                        boxtex.children("p").remove();              // xóa chữ trong ô kết quả
                         return false;
                     }
                 });
@@ -63,5 +69,6 @@ jQuery.fn.load_event = function(){
 };
 
 $(function(){
+    //load hàm load_event
     $(".content").load_event();
 });

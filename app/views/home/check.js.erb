@@ -1,10 +1,16 @@
 <% if params['answer'] == "BIENBAO" %>
+    //-- #Xóa hình câu hỏi, thẻ .listword chứa danh sách từ để chọn,thẻ form chứa đáp án
     $(".boximg").remove();
     $(".listword").remove();
     $("form").remove();
+
+    //-- #Load form _play.html.erb vào thẻ .content
     $(".content").append('<%= j render 'play' %>');
+
+    //-- #Load lại các hàm jquery -->
     $(".content").load_event();
     $(".content").load_effect();
+
 <% else %>
     alert("Sai rồi !!!")
 <% end %>

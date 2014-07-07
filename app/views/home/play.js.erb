@@ -1,8 +1,15 @@
+
+//-- #Ẩn hình game Đuổi hình bắt chữ và nút play
 $(".imgTitle").hide("scale",700);
 $(".imgPlay" ).delay(700).hide("clip",500);
+
+//-- #Load form "_play.html.erb" , form  "_viewstatic.html.erb" và các hàm jquery
 setTimeout(function(){
+    //-- #Load form "_play.html.erb" , form  "_viewstatic.html.erb"
     $(".content").append('<%= j render 'play' %>');
     $(".content").append('<%= j render 'viewstatic' %>');
+
+    //-- #Load các hàm jquery
     $(".content").load_event();
     $(".content").load_effect();
     $(".content").load_hover();

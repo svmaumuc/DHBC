@@ -2,20 +2,28 @@
 <html>
 <head>
   <title>DHBC</title>
+  <!-- #Load các file CSS -->
   <%= stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag 'index' %>
   <%= stylesheet_link_tag 'play' %>
+
+  <!-- #Load các file js (application.js, play_event.js, jquery-ui.js   -->
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'play_event' %>
   <%= javascript_include_tag "/assets/jquery-ui.js" %>
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div class="content">
   <%= yield %>
 </div>
+
 </body>
 </html>
 
+<!-- #Load các file play.js  -->
 <%= javascript_include_tag 'play' %>
 

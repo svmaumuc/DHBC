@@ -1,7 +1,9 @@
+<!-- #box chứ hình câu hỏi %> -->
 <div class="boximg">
   <img id="hinh" src="<%= @urlimg %>">
 </div>
 
+<!-- #Danh sách ô chứa từ để trả lời -->
 <div class="listword">
   <% @listext.each do |char| %>
       <div class="word" id="<%= char %>">
@@ -11,6 +13,7 @@
   <% end %>
 </div>
 
+<!-- #Danh sách ô chứa kết quả trả lời -->
 <%= form_tag "/home/check", method:"get",remote:true do %>
     <%= hidden_field_tag(:answer, "") %>
     <div class="listBoxtext">
@@ -22,3 +25,4 @@
 
     </div>
 <% end %>
+
