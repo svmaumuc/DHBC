@@ -1,4 +1,4 @@
-<% if params['answer'] == "BIENBAO" %>
+<% if $kiemtra %>
     //-- #Xóa hình câu hỏi, thẻ .listword chứa danh sách từ để chọn,thẻ form chứa đáp án
     $(".boximg").remove();
     $(".listword").remove();
@@ -12,5 +12,5 @@
     $(".content").load_effect();
 
 <% else %>
-    alert("Sai rồi !!!")
+    alert('<%= $kiemtra %>');
 <% end %>

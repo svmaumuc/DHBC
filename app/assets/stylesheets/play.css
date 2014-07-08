@@ -75,13 +75,6 @@ div.boxtext {
 div.boxtext img:hover,div.word img:hover{
     cursor:pointer;
     opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-    filter: alpha(opacity=20);
-    transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    -ms-transition: all 0.3s ease-in-out 0s;
 }
 
 div.listBoxtext .boxtext p {

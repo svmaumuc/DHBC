@@ -17,7 +17,7 @@
 <%= form_tag "/home/check", method:"get",remote:true do %>
     <%= hidden_field_tag(:answer, "") %>
     <div class="listBoxtext">
-    <% @result.length.times do %>
+    <% $result.length.times do %>
         <div class="boxtext">
           <img src="/assets/ochu.png"/>
         </div>
