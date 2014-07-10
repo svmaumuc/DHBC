@@ -8,6 +8,12 @@ class HomeController < ApplicationController
     #tạo câu hỏi mới
     @nextQuest = NewQues(@user)
 
+    #kiem tra câu hỏi mới có ko
+    if @nextQuest.nil?
+      redirect_to :action => "end"
+      return
+    end
+
     #gán biến để xử lý hiện thị ở view
     @result = @nextQuest[0]
     @urlimg = @nextQuest[1]
@@ -16,7 +22,13 @@ class HomeController < ApplicationController
 
   def check
     #load lại câu hỏi
-    @nextQuest = NewQues(@user)
+    @nextQuest = NewQues(@user    )
+
+    #kiem tra câu hỏi có ko
+    if @nextQuest.nil?
+      redirect_to :action => "end"
+      return
+    end
 
     #kiem tra cau hoi cu
     @check_answer = false
@@ -24,7 +36,7 @@ class HomeController < ApplicationController
       @check_answer  = true
 
       #lưu ket quả
-      @newHis = Lichsu.new(cauhoi: @nextQuest[3], nguoichoi: @user,solantraloisai: 0, thoigian:0)
+      @newHis = Lichsu.new(cauhoi: @nextQuest[3], nguoichoi: @user,solantraloisai: 0, thoigian: 0)
       @newHis.save()
       @user.diem += 10
       @user.save()
@@ -32,11 +44,19 @@ class HomeController < ApplicationController
       #tạo câu hỏi mới
       @nextQuest = NewQues(@user)
 
+      #kiem tra câu hỏi mới có ko
+      if @nextQuest.nil?
+        redirect_to :action => "end"
+        return
+      end
       #gán biến để xử lý hiện thị ở view
       @result = @nextQuest[0]
       @urlimg = @nextQuest[1]
       @listext = @nextQuest[2]
     end
+  end
+
+  def end
   end
 
   def NewQues(user) #=> [dapan, linkhinh, chuoiRandom, record cauhoi]
@@ -51,6 +71,10 @@ class HomeController < ApplicationController
 
     #lấy ds cau hoi chưa trả lời
     @quesArr = Cauhoi.all -  @ansArr
+
+    if @quesArr.empty?
+      return
+    end
 
     #chọn câu hỏi chưa trả lời
     @ques = @quesArr.first
