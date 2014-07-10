@@ -4,21 +4,23 @@
     <data-source source="LOCAL" name="Rails DHBC: development" uuid="37026935-cf6a-4485-906e-572a66e8ab2b">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:v5_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/DHBC_development</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails DHBC: test" uuid="2e203ad2-0ea3-4c97-9305-2f0b3d7a336f">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:v5_test</jdbc-url>
+      <jdbc-url>jdbc:postgresql:DHBC_test</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails DHBC: production" uuid="e6f0aac1-0718-462e-9585-711beb46f039">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:v5_production</jdbc-url>
-      <user-name>v5</user-name>
-      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffcdf9fdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <jdbc-url>jdbc:postgresql:DHBC_production</jdbc-url>
+      <user-name>DHBC</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfeedfe2dfe8dfe9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
       <libraries />
     </data-source>
   </component>

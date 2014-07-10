@@ -5,7 +5,7 @@
 
 <!-- #Danh sách ô chứa từ để trả lời -->
 <div class="listword">
-  <% @listext.each do |char| %>
+  <% @listext.each_char do |char| %>
       <div class="word" id="<%= char %>">
         <img src="/assets/word.png"/>
         <p><%= char %></p>
@@ -17,7 +17,7 @@
 <%= form_tag "/home/check", method:"get",remote:true do %>
     <%= hidden_field_tag(:answer, "") %>
     <div class="listBoxtext">
-    <% $result.length.times do %>
+    <% @result.length.times do %>
         <div class="boxtext">
           <img src="/assets/ochu.png"/>
         </div>
