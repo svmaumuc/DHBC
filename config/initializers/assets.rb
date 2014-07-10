@@ -10,3 +10,8 @@ Rails.application.config.assets.precompile += %w( index.css )
 Rails.application.config.assets.precompile += %w( play.css )
 Rails.application.config.assets.precompile += %w( play.js )
 Rails.application.config.assets.precompile += %w( play_event.js )
+
+
+#BVKim 7/7/14
+Rails.application.config.assets.precompile += %w( login.css )
+Rails.application.config.assets.precompile += %w( login.js )

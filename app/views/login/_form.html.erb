@@ -1,0 +1,18 @@
+<div class="k_login_main">
+  <%= form_tag "/home/check", method:"post", :onsubmit => "validateLogin()", :id => "k_form_login" do %>
+      <%= text_field :post, :username, class: 'k_username'%>
+      <%= password_field :post, :password, class: 'k_password'%>
+        <!-- Nút quên mật khẩu -->
+      <div class="k_login_fogot"></div>
+        <!-- Nút login -->
+      <div class="k_login_btnsignin" onclick="return validateLogin()"></div>
+  <% end %>
+
+  <!-- Nút đăng nhập bằng mạng xã hội -->
+  <a href="auth/facebook">
+    <div class="k_login_fb"></div>
+  </a>
+
+  <div class="k_login_gg"></div>
+  <div class="k_login_tw"></div>
+</div>

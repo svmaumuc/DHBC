@@ -94,6 +94,14 @@ class HomeController < ApplicationController
   end
 
   def checkLogin
-    @user = Nguoichoi.find(1)
+    # Hàm check login:
+    # Nhiệm vụ kiểm tra xem hệ thống đăng nhập hay chưa, nếu chưa return false, ngược lại return người chơi
+    if request.session[:user_id].nil?
+      @user = false
+    else
+      @user = Nguoichoi.find(request.session[:user_id])
+    end
+    #@user = Nguoichoi.find(1)
+    return @user
   end
 end

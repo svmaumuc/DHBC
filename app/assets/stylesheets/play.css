@@ -123,3 +123,11 @@ div#TextTop p {
   font-size: 16pt;
   color: brown;
 }
+
+.k_btn_logout{
+    background-image: url('login/logout.png');
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}

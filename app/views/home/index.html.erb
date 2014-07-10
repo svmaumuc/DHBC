@@ -1,13 +1,27 @@
+<%
+# Kiểm tra đăng nhập hay chưa, nếu chưa thì hiện khung login
+if @user == false
+%>
+    <%= render 'login/form' %>
+<%
+# Nếu đã Đăng nhập rồi thì hiện khung Play
+else
+%>
+    <!-- #Hình game "đuổi hình bắt chữ" %> -->
+    <div class="imgTitle">
+      <%= image_tag("imgTitle.png", :alt => "play") %>
+    </div>
 
-<!-- #Hình game "đuổi hình bắt chữ" %> -->
-<div class="imgTitle">
-  <%= image_tag("imgTitle.png", :alt => "play") %>
-</div>
+    <!-- #Nút play" %> -->
+    <div class="imgPlay">
+      <%= link_to  "home/play",remote:true do   %>
+          <%= image_tag("play1.png",:id =>'play', :alt => "play") %>
+      <% end%>
+    </div>
+<%
+end
 
-<!-- #Nút play" %> -->
-<div class="imgPlay">
-  <%= link_to  "home/play",remote:true do   %>
-      <%= image_tag("play1.png",:id =>'play', :alt => "play") %>
-  <% end%>
-</div>
+%>
+
+
 

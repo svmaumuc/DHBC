@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'login/index'
+  get 'auth/:provider/callback', to: 'login#create'
+  get 'logout', to: 'login#destroy'
+
+
   get 'home/play'
   get 'home/check'
   get 'home/end'
