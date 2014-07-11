@@ -6,6 +6,8 @@
       <div class="k_login_fogot"></div>
         <!-- Nút login -->
       <div class="k_login_btnsignin" onclick="return validateLogin()"></div>
+      <!-- Nút Đăng ký -->
+      <div class="k_register_btnsignin" onclick="showRegister()"></div>
   <% end %>
 
   <!-- Nút đăng nhập bằng mạng xã hội -->
@@ -16,3 +18,20 @@
   <div class="k_login_gg"></div>
   <div class="k_login_tw"></div>
 </div>
+
+
+<div class="k_register">
+   <div class="k_form">
+     <%= form_tag "/login/register", method:"post" do %>
+         <%= text_field :register, :username, class: 'k_username_register'%>
+         <%= text_field :register, :email, class: 'k_email_register'%>
+         <%= password_field :register, :password1, class: 'k_password_register1'%>
+         <%= password_field :register, :password2, class: 'k_password_register2'%>
+         <!-- Nút Đăng ký (Tạo Njck)-->
+         <!--<div class="k_register_btncreate" onclick=" return validatorRegister()"></div>-->
+         <%= submit_tag '', :disable_with => 'Please wait...', :class => 'k_register_btncreate' %>
+     <% end %>
+
+   </div>
+</div>
+

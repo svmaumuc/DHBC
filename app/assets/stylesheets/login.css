@@ -9,11 +9,12 @@
 
 .k_login_main .k_login_btnsignin{
     background-image: url("login/login-button.png");
-    width: 125px;
-    height: 60px;
+    background-size: 100px 50px;
+    width: 100px;
+    height: 50px;
     position: absolute;
     top: 220px;
-    left: 90px;
+    left: 50px;
     /*margin-left: 90px;
     margin-top: 220px;*/
 }
@@ -23,6 +24,24 @@
     position: absolute;
     cursor: pointer;
 }
+
+
+.k_login_main .k_register_btnsignin{
+    background-image: url("login/button-register.png");
+    background-size: 80px 50px;
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    top: 220px;
+    left: 170px;
+}
+
+.k_login_main .k_register_btnsignin:hover{
+    background-image: url("login/button-register2.png");
+    position: absolute;
+    cursor: pointer;
+}
+
 
 .k_login_main .k_login_fogot{
     background-image: url("login/login-fogot.png");
@@ -106,3 +125,85 @@
     cursor: pointer;
 }
 
+
+/* Xử lý khung đăng ký */
+.k_register{
+    background-image: url("login/login-register-form.png");
+    background-size: 504px 372px;
+    width: 504px;
+    height: 372px;
+    position: absolute;
+    top: 85px;
+    left: 400px;
+    /*display: none;*/
+    z-index: -2;
+}
+
+.k_register .k_username_register{
+    position: absolute;
+    left: 230px;
+    top: 87px;
+    line-height: 20px;
+    width: 200px;
+    border: none;
+}
+
+.k_register .k_email_register{
+    position: absolute;
+    left: 230px;
+    top: 142px;
+    line-height: 20px;
+    width: 200px;
+    border: none;
+}
+
+.k_register .k_password_register1{
+    position: absolute;
+    left: 230px;
+    top: 196px;
+    line-height: 20px;
+    width: 200px;
+    border: none;
+}
+
+.k_register .k_password_register2{
+    position: absolute;
+    left: 230px;
+    top: 252px;
+    line-height: 20px;
+    width: 200px;
+    border: none;
+}
+
+.k_register .k_register_btncreate{
+    background-image: url("login/button-register.png");
+    background-size: 100px 60px;
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    top: 295px;
+    left: 218px;
+
+
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.k_register .k_register_btncreate:hover{
+    background-image: url("login/button-register2.png");
+    cursor: pointer;
+}
+
+.k_register .k_form{
+    background-image: url("login/login-register-content.png");
+    background-size: 504px 372px;
+    width: 504px;
+    height: 372px;
+    position: absolute;
+    /*display: none;*/
+    z-index: -2;
+}

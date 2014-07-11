@@ -19,4 +19,10 @@ class LoginController < ApplicationController
     #redirect wherever you want.
   end
 
+  def register
+    @newUser = Nguoichoi.new(ten: @register[username], linkfb: 'abc', diem: 0, matkhau: '1234')
+    @newUser.save
+    redirect_to root_path
+  end
+
 end

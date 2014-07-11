@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
   def check
     #load lại câu hỏi
-    @nextQuest = NewQues(@user    )
+    @nextQuest = NewQues(@user)
 
     #kiem tra câu hỏi có ko
     if @nextQuest.nil?

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'login/index'
   get 'auth/:provider/callback', to: 'login#create'
   get 'logout', to: 'login#destroy'
-
+  post 'login/register' => 'login#register'
 
   get 'home/play'
   get 'home/check'
