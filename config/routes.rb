@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  get 'login/index'
+
+  get 'login/index' => 'login#index', as: :login
+  get 'logout', to: 'login#destroy', as: :logout
   get 'auth/:provider/callback', to: 'login#create'
-  get 'logout', to: 'login#destroy'
   post 'login/register' => 'login#register'
 
-  get 'home/play'
-  get 'home/check'
-  get 'home/end'
+  get 'home/index'
+
+  get 'play/index'  => 'play#index', as: :play
+  get 'play/check' => 'play#check', as: :playcheck
+  get 'play/end'  => 'play#end', as: :end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

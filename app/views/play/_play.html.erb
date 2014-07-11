@@ -3,9 +3,6 @@
   <img id="hinh" src="<%= @urlimg %>">
 </div>
 
-
-
-
 <!-- #Danh sách ô chứa từ để trả lời -->
 <div class="listword">
   <% @listext.each_char do |char| %>
@@ -17,7 +14,7 @@
 </div>
 
 <!-- #Danh sách ô chứa kết quả trả lời -->
-<%= form_tag "/home/check", method:"get",remote:true do %>
+<%= form_tag playcheck_path, method:"get",remote:true do %>
     <%= hidden_field_tag(:answer, "") %>
     <div class="listBoxtext">
     <% @result.length.times do %>

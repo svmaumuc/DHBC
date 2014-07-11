@@ -11,19 +11,15 @@ jQuery.fn.load_effect = function() {
 
     // event lick top
     $("#top").click(
-        function()
-        {
-            $( "#topScore" ).show( "clip", 800 );
-            $( "#TextTop" ).delay(400).show("drop",500 );
+        function(){
+            $( ".topScore" ).show( "clip", 600 );
         });
 
     //event lick ra ngoai topScore
     $(document).click(
         function(e) {
-            if(e.target.id != 'topScore' && e.target.id == '')
-            {
-                $( "#TextTop" ).hide();
-                $( "#topScore" ).hide( "clip", 1000 );
+            if(e.target.id != 'topScore' && e.target.id == ''){
+                $( ".topScore" ).hide( "clip", 600 );
             }
         });
 

@@ -3,9 +3,11 @@
     $(".boximg").remove();
     $(".listword").remove();
     $("form").remove();
+    $(".k_info_user").remove();
 
     //-- #Load form _play.html.erb vào thẻ .content
     $(".content").append('<%= j render 'play' %>');
+    $(".k_welcome").append('<%= j render 'infouser' %>');
 
     //-- #Load lại các hàm jquery -->
     $(".content").load_event();

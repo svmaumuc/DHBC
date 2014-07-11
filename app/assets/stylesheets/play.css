@@ -99,24 +99,21 @@ div.score {
 
 div.topScore
 {
-  position: absolute;
-  top : 50px;
-  left: 400px;
-}
-
-div.topScore img
-{
-  z-index: 1;
-  display: none;
-  position: absolute;
+    background-image: url("scroll.png");
+    background-size: 419px 468px;
+    position: absolute;
+    top: 50px;
+    left: 400px;
+    width: 419px;
+    height: 468px;
+    display: none;
+    z-index: 2;
 }
 
 div#TextTop {
   position: absolute;
-  z-index: 2;
   left: 100px;
   top: 100px;
-  display: none;
 }
 
 div#TextTop p {

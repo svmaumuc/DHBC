@@ -1,13 +1,6 @@
 
-<!-- #Bảng điểm của người chơi -->
-<div class="score">
-  <img id="score"src="/assets/paper.png">
-  <p id="score" >350 Điểm</p>
-</div>
-
 <!-- #Bảng xếp hạng -->
 <div class="topScore">
-  <img id="topScore" src="/assets/scroll.png">
   <div id="TextTop">
     <p>1.wadawd</p>
     <p>2.dawdwd</p>
@@ -22,7 +15,9 @@
   <img id="sound" src="/assets/sound1.png"/>
   <img id="help" src="/assets/help1.png"/>
   <img id="top" src="/assets/top1.png">
-  <a href="/logout"><img id="logout" src="/assets/logout.png"></a>
+  <%= link_to logout_path do   %>
+    <img id="logout" src="/assets/logout.png"></a>
+  <% end%>
 </div>
 
 <!-- Khung Welcome -->
@@ -32,8 +27,5 @@
       <img width="80" src="<%= @user.image %>?type=large" alt="Avatar">
     </div>
 
-  <div class="k_info_user">
-    <h3>Xin chào</h3>
-    <h4><%= @user.ten %></h4>
-  </div>
+    <%= render "infouser" %>
 </div>
