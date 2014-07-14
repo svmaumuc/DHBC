@@ -1,6 +1,6 @@
 
 <!-- #Bảng xếp hạng -->
-<div class="topScore">
+<div class="topScore" id="topScore">
   <div id="TextTop">
     <p>1.wadawd</p>
     <p>2.dawdwd</p>
@@ -12,11 +12,12 @@
 
 <!-- #Các nút option -->
 <div class="option">
-  <img id="sound" src="/assets/sound1.png"/>
-  <img id="help" src="/assets/help1.png"/>
-  <img id="top" src="/assets/top1.png">
+  <img id="sound" src="/assets/sound1.png" title="Bật tắt âm thanh"/>
+  <img id="help" src="/assets/help1.png" title="Thông tin">
+  <img id="top" src="/assets/top1.png" title="Bảng xếp hạng">
+  <img id="idea" src="/assets/play/idea.png" title="Đóng góp câu hỏi">
   <%= link_to logout_path do   %>
-    <img id="logout" src="/assets/logout.png"></a>
+      <img id="logout" src="/assets/logout.png" title="Đăng xuất"></a>
   <% end%>
 </div>
 
@@ -27,5 +28,16 @@
       <img width="80" src="<%= @user.image %>?type=large" alt="Avatar">
     </div>
 
-    <%= render "infouser" %>
+      <%= render "infouser" %>
 </div>
+
+  <div class="ideabox" id="ideabox">
+    <center><h2>Đóng góp câu hỏi</h2></center><hr>
+    <%= form_tag playidea_path, multipart: true,remote: true do %>
+        <p><%= label_tag("Hình:") %>
+        <%= file_field_tag :idea_picture %></p>
+        <p><%=  text_field_tag :idea_answer1,nil , placeholder: "Đáp án không dấu" %></p>
+        <p><%=  text_field_tag :idea_answer2,nil , placeholder: "Đáp án có dấu" %></p>
+        <center><p><%= submit_tag("Xong") %></p></center>
+    <% end %>
+  </div>

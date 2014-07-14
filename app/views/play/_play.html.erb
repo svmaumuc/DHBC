@@ -14,13 +14,11 @@
 </div>
 
 <!-- #Danh sách ô chứa kết quả trả lời -->
-<%= form_tag playcheck_path, method:"get",remote:true do %>
+<%= form_tag playcheck_path, id: "reanswer", method:"get",remote:true do %>
     <%= hidden_field_tag(:answer, "") %>
     <div class="listBoxtext">
     <% @result.length.times do %>
-        <div class="boxtext">
-          <img src="/assets/ochu.png"/>
-        </div>
+        <div class="boxtext"></div>
     <% end %>
 
     </div>

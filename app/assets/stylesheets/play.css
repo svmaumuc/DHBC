@@ -68,8 +68,11 @@ div.listBoxtext {
 }
 
 div.boxtext {
-  float: left;
-  display: none;
+    float: left;
+    display: none;
+    background: url("ochu.png");
+    width: 72px;
+    height: 72px;
 }
 
 div.boxtext img:hover,div.word img:hover{
@@ -78,7 +81,7 @@ div.boxtext img:hover,div.word img:hover{
 }
 
 div.listBoxtext .boxtext p {
-  margin-top: -56px;
+  margin-top: 20px;
   font-size: 31px;
 }
 
@@ -127,4 +130,43 @@ div#TextTop p {
     width: 60px;
     height: 60px;
     position: absolute;
+}
+
+.ui-dialog
+{
+    display: none;
+    border-radius: 4px;
+    border: 1px solid #aaaaaa;
+    outline: 0;
+    z-index: 2;
+}
+
+.ui-dialog-titlebar
+{
+    background: #8F6E4A;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    height: 31px;
+    opacity: 0.8;
+}
+.ui-dialog-titlebar span {
+    display: none;
+}
+.ui-button
+{
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 270px;
+    margin-top: 3px;
+    background: #AA855D url("play/close.png") ;
+}
+
+div.ideabox {
+    padding: 10px;
+    display: none;
+
+    background: white;
+    opacity: 0.985;
 }

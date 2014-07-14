@@ -13,8 +13,8 @@ function checkSubmit(numBox)
             $("#answer").val(answer);
             if(answer.length == numBox)
             {
-                $("#answer").parent("form").submit();
-                //alert("Ko chinh xac");
+                $("#reanswer").submit();
+               //alert(answer);
             }
         }
     });

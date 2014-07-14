@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'play/check' => 'play#check', as: :playcheck
   get 'play/end'  => 'play#end', as: :end
 
+  match 'play/idea' => 'play#idea', via: [:get, :post], as: :playidea
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

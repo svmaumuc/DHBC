@@ -15,10 +15,24 @@ jQuery.fn.load_effect = function() {
             $( ".topScore" ).show( "clip", 600 );
         });
 
-    //event lick ra ngoai topScore
+    $("#idea").click(
+        function(){
+            $( "#ideabox" ).dialog({
+                show: {
+                    effect: "clip",
+                    duration: 600
+                },
+                hide: {
+                    effect: "clip",
+                    duration: 600
+                }
+            });
+        });
+
+    //event lick ra ngoai
     $(document).click(
         function(e) {
-            if(e.target.id != 'topScore' && e.target.id == ''){
+            if(e.target.id == ''){
                 $( ".topScore" ).hide( "clip", 600 );
             }
         });
@@ -35,4 +49,7 @@ $(function(){
     //Show imgTitle và nút play
     $(".imgTitle").show("scale",700);
     $(".imgPlay").delay(800).show("clip",700);
+    
 });
+
+click = false;
