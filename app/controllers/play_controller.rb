@@ -4,7 +4,7 @@ class PlayController < ApplicationController
 
   def index
     #tạo câu hỏi mới
-    @nextQuest = NewQues(@user)
+    @nextQuest = view_context.NewQues(@user)
 
     #kiem tra câu hỏi mới có ko
     if @nextQuest.nil?
@@ -20,7 +20,7 @@ class PlayController < ApplicationController
 
   def check
     #load lại câu hỏi
-    @nextQuest = NewQues(@user)
+    @nextQuest = view_context.NewQues(@user)
 
     #kiem tra câu hỏi có ko
     if @nextQuest.nil?
@@ -40,7 +40,7 @@ class PlayController < ApplicationController
       @user.save()
 
       #tạo câu hỏi mới
-      @nextQuest = NewQues(@user)
+      @nextQuest = view_context.NewQues(@user)
 
       #kiem tra câu hỏi mới có ko
       if @nextQuest.nil?
@@ -48,23 +48,22 @@ class PlayController < ApplicationController
         return
       end
       #gán biến để xử lý hiện thị ở view
-      @result = @nextQuest[0]
-      @urlimg = @nextQuest[1]
-      @listext = @nextQuest[2]
+      @result = @nextQuest[0]; @urlimg = @nextQuest[1];  @listext = @nextQuest[2]
     end
   end
 
   def idea
+    if params[:idea_picture].nil? or params[:idea_answer1].empty? or params[:idea_answer2].empty?
+      @check_idea = false
+      return
+    end
+
     uploaded_io = params[:idea_picture]
 
-    ch = Cauhoi.new()
-    ch.dapan = params[:idea_answer1]
-    ch.dapancodau = params[:idea_answer2]
+    ch = Cauhoi.new(dapan: params[:idea_answer1],dapancodau: params[:idea_answer2])
     ch.save()
 
-    hinh = Hinhanh.new()
-    hinh.cauhoi = ch
-    hinh.save()
+    hinh = Hinhanh.new(cauhoi: ch); hinh.save()
     hinh.link = '/uploads/' + hinh.id.to_s + '.jpg'
     hinh.save()
 
@@ -75,40 +74,6 @@ class PlayController < ApplicationController
   end
 
   def end
-  end
-
-  def NewQues(user) #=> [dapan, linkhinh, chuoiRandom, record cauhoi]
-    @user = Nguoichoi.find(user.id)
-
-    #lấy ds cau hoi đã trả lời của nguoi choi
-    @ansArr = []
-    @hisArr = @user.lichsus
-    @hisArr.each do |his|
-      @ansArr << his.cauhoi
-    end
-
-    #lấy ds cau hoi chưa trả lời
-    @quesArr = Cauhoi.all -  @ansArr
-
-    if @quesArr.empty?
-      return
-    end
-
-    #chọn câu hỏi chưa trả lời
-    @ques = @quesArr.first
-
-    # Gán đáp án và link hình vào biến
-    @result = '' + (@ques.dapan)
-    @urlimg = '' + @ques.hinhanhs.first.link
-
-    #random chuỗi chứa từ để chọn trả lời
-    @charA_Z = ['A','B','C','D','E','G','H','I','K','L','M','N','O','P','Q','R','T','V','X','Y','U','S']
-    @listext = ''+@ques.dapan
-    (10-@ques.dapan.length).times do
-      @listext.insert(Random.rand(@listext.length), @charA_Z[Random.rand(22)])
-    end
-
-    return @result,@urlimg,@listext,@ques
   end
 
   def checkLogin
