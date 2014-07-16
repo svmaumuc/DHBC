@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-
+  #resources :login
   get 'login/index' => 'login#index', as: :login
   get 'logout', to: 'login#destroy', as: :logout
+  post 'login/register' => 'login#register', via: [:get, :post], as: :register
+  post 'login/logging' => 'login#logging', via: [:get, :post], as: :logging
+
   get 'auth/:provider/callback', to: 'login#create'
-  post 'login/register' => 'login#register'
+
 
   get 'home/index'
 

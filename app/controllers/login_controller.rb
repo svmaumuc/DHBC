@@ -1,5 +1,7 @@
 class LoginController < ApplicationController
   require 'openssl'
+  require 'digest/md5'
+
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
   def index
@@ -23,9 +25,21 @@ class LoginController < ApplicationController
   end
 
   def register
-    @newUser = Nguoichoi.new(ten: @register[username], linkfb: 'abc', diem: 0, matkhau: '1234')
-    @newUser.save
+
+    newUser = Nguoichoi.new()
+    newUser.provider = params[:email]
+    newUser.matkhau = Digest::MD5.hexdigest(params[:password1])
+    newUser.diem = 0
+    newUser.save
+    puts("alert('abc')")
     redirect_to root_path
   end
+
+  def logging
+    sessier.ten = params[:username]
+    newUson[:user_id] = user.id
+  end
+
+
 
 end

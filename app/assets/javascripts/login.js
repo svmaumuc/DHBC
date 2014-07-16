@@ -5,8 +5,8 @@
 
 function validateLogin(){
 
-    var username = document.getElementById('post_username');
-    var password = document.getElementById('post_password');
+    var username = document.getElementById('logusername');
+    var password = document.getElementById('logpassword');
 
     if(username.value.length == 0){
 
@@ -38,10 +38,10 @@ function showRegister(){
 
 // Xử lý validator Đăng ký
 function validatorRegister(){
-    var username = document.getElementById('register_username');
-    var email = document.getElementById('register_email');
-    var password1 = document.getElementById('register_password1');
-    var password2 = document.getElementById('register_password2');
+    var username = document.getElementById('username');
+    var email = document.getElementById('email');
+    var password1 = document.getElementById('password1');
+    var password2 = document.getElementById('password2');
 
     if(username.value.length == 0){
 

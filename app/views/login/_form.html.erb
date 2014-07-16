@@ -1,11 +1,12 @@
 <div class="k_login_main">
-  <%= form_tag "/home/check", method:"post", :onsubmit => "validateLogin()", :id => "k_form_login" do %>
-      <%= text_field :post, :username, class: 'k_username'%>
-      <%= password_field :post, :password, class: 'k_password'%>
+  <%= form_tag logging_path, method:"post", :onsubmit => "return validateLogin()", :id => "k_form_login" do %>
+      <%= text_field_tag :logusername, nil, class: 'k_username'%>
+      <%= password_field_tag :logpassword, nil, class: 'k_password'%>
         <!-- Nút quên mật khẩu -->
       <div class="k_login_fogot"></div>
         <!-- Nút login -->
-      <div class="k_login_btnsignin" onclick="return validateLogin()"></div>
+      <%= submit_tag '', :disable_with => 'Please wait...', :class => 'k_login_btnsignin' %>
+
       <!-- Nút Đăng ký -->
       <div class="k_register_btnsignin" onclick="showRegister()"></div>
   <% end %>
@@ -22,14 +23,15 @@
 
 <div class="k_register">
    <div class="k_form">
-     <%= form_tag "/login/register", method:"post" do %>
-         <%= text_field :register, :username, class: 'k_username_register'%>
-         <%= text_field :register, :email, class: 'k_email_register'%>
-         <%= password_field :register, :password1, class: 'k_password_register1'%>
-         <%= password_field :register, :password2, class: 'k_password_register2'%>
+     <%= form_tag register_path, multipart: true, method:"post", remote: false, :onSubmit => 'return validatorRegister();' do %>
+
+         <%= text_field_tag :username, nil, class: 'k_username_register'%>
+         <%= text_field_tag :email, nil, class: 'k_email_register'%>
+         <%= password_field_tag :password1, nil, class: 'k_password_register1'%>
+         <%= password_field_tag :password2, nil, class: 'k_password_register2'%>
          <!-- Nút Đăng ký (Tạo Njck)-->
          <!--<div class="k_register_btncreate" onclick=" return validatorRegister()"></div>-->
-         <%= submit_tag '', :disable_with => 'Please wait...', :class => 'k_register_btncreate' %>
+         <%= submit_tag '', :disable_with => 'Please wait...', :class => 'k_register_btncreate', :onSubmit => 'return validatorRegister();' %>
      <% end %>
 
    </div>
